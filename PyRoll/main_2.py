@@ -17,6 +17,7 @@ with open(csvpath) as csvfile:
 
     #Set variable 
     candidate_vote={}
+  
     candidate_name= []
     
     for row in csvreader:
@@ -25,11 +26,11 @@ with open(csvpath) as csvfile:
         if candidate not in candidate_name:
             candidate_name.append(candidate)
             candidate_vote[candidate]=1
-
-        candidate_vote[candidate]=candidate_vote[candidate]+1
+        else:
+            candidate_vote[candidate]=candidate_vote[candidate]+1
     
     total_votes=sum(candidate_vote.values())
-    
+     
     percentage=[]
     print ("Election Results")
     print ("--------------------")
